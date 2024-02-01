@@ -20,6 +20,8 @@
     "@hapipal/schmervice": "^3.0.0",
     "@hapipal/schwifty": "6.x.x",
     "amqplib": "^0.10.3",
+    "boom": "^7.3.0",
+    "crypto": "^1.0.1",
     "exiting": "6.0.1",
     "joi": "17.x.x",
     "mysql2": "^2.3.3",
