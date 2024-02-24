@@ -5,7 +5,6 @@ const amqp = require('amqplib/callback_api');
 
 function sendMail(data) {
 
-    // Generate SMTP service account from ethereal.email
     nodemailer.createTestAccount((err, account) => {
         if (err) {
             console.error('Failed to create a testing account. ' + err.message);
@@ -21,7 +20,6 @@ function sendMail(data) {
             }
         });
 
-        // Message object
         const message = {
             from: data.sender,
             to: data.receiver,
@@ -52,7 +50,7 @@ amqp.connect('amqp://localhost', function(error0, connection) {
             throw error1;
         }
 
-        let queue = 'mailer queue';
+        const queue = 'mailer queue';
 
         channel.assertQueue(queue, {
             durable: false
