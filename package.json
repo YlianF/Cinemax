@@ -25,6 +25,7 @@
     "crypto": "^1.0.1",
     "exiting": "6.0.1",
     "joi": "17.x.x",
+    "json-2-csv": "^5.4.0",
     "mysql2": "^2.3.3",
     "nodemailer": "^6.9.9",
     "objection": "2.x.x",

@@ -25,7 +25,8 @@ function sendMail(data) {
             to: data.receiver,
             subject: data.object,
             text: data.content,
-            html: '<p>' + data.content + '</p>'
+            html: '<p>' + data.content + '</p>',
+            attachments: data.attachments
         };
         console.log(message)
 
