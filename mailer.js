@@ -23,10 +23,11 @@ function sendMail(data) {
         const message = {
             from: data.sender,
             to: data.receiver,
-            subject: data.objet,
+            subject: data.object,
             text: data.content,
             html: '<p>' + data.content + '</p>'
         };
+        console.log(message)
 
         transporter.sendMail(message, (err, info) => {
             if (err) {
