@@ -21,7 +21,12 @@ Oui les admin peuvent voir les films dans un fichier CSV envoyé par MAIL (yes).
 
 # Setup le projet ☝️🤓 :
 
-Besoin d'avoir NodeJS (version 20.11.0)  
+Besoin d'avoir NodeJS (version 20.11.0) et docker
+
+Cloner le repo github :
+```
+git clone https://github.com/YlianF/Cinemax
+```
 
 Installer les dépendances (pour les 0 personnes qui ne connaissent pas la commande) :
 ```
@@ -34,6 +39,8 @@ docker run --name hapi-mysql -e MYSQL_ROOT_PASSWORD=hapi -e MYSQL_DATABASE=user 
 
 docker run -it --rm --name hapi-rabbitmq -p 5672:5672 -p 15672:15672 -d rabbitmq:3.13-management
 ```
+
+Créer et remplir les .env avec vos données (un à la racine du projet et un dans le dossier server, voir les .env-keep pour la structure)
 
 Démarrer le serveur de mails : 
 ```
