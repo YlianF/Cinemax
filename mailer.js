@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config();
 const nodemailer = require('nodemailer');
 const amqp = require('amqplib/callback_api');
 
@@ -12,11 +13,11 @@ function sendMail(data) {
         }
 
         const transporter = nodemailer.createTransport({
-            host: 'smtp.ethereal.email',
-            port: 587,
+            host: process.env.MAILER_HOST,
+            port: process.env.MAILER_PORT,
             auth: {
-                user: 'bertha88@ethereal.email',
-                pass: 'zWQMETVVvrBeUGvfHh'
+                user: process.env.MAILER_USER,
+                pass: process.env.MAILER_PWD
             }
         });
 
@@ -28,7 +29,6 @@ function sendMail(data) {
             html: '<p>' + data.content + '</p>',
             attachments: data.attachments
         };
-        console.log(message)
 
         transporter.sendMail(message, (err, info) => {
             if (err) {
